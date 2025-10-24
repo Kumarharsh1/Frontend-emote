@@ -11,9 +11,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "VITE_API_BASE_URL": "https://emote-vn4b7.vercel.app",
-    "VITE_APP_NAME": "Emotion Detector"
-  }
+  ]
 }

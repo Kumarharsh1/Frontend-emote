@@ -1,26 +1,39 @@
-# EmotiSense AI - Premium Emotion & Gender Intelligence
+# EmotiSense AI - Face Detection & Emotion Analysis
 
-?? **Ultra Premium 7-Star Luxury Frontend** with real-time emotion and gender detection powered by advanced AI.
+?? **Cool Face Detection Theme** with real-time emotion and gender detection powered by advanced AI.
 
 ## Features
 
-- ?? **Real-time Emotion Detection** (Happy, Sad, Angry, Surprised, Neutral, Fearful, Disgusted)
+- ?? **Real-time Emotion Detection** (Happy, Sad, Angry, Surprised, Neutral, Fear, Disgust, and more)
 - ?? **Accurate Gender Recognition** with confidence scores
 - ?? **Multiple Input Methods**:
   - Live camera analysis
   - Photo capture
   - Image upload
-- ?? **Luxury Design** with gold, diamond, and emerald themes
-- ?? **Fully Responsive** design
-- ? **Lightning Fast** analysis with proper backend integration
+- ?? **Cool Tech Theme** with blue/purple color scheme
+- ?? **Tight & Responsive** design
+- ? **Fast Analysis** with proper backend integration
 
 ## Backend Integration
 
-This frontend integrates with the backend at: `https://emote-vn4b7.vercel.app`
+Integrated with backend API: `https://emote-vn4b7.vercel.app`
 
-### API Endpoints Used:
-- `POST /api/analyze-face` - Main analysis endpoint
-- Automatic endpoint detection for compatibility
+### API Endpoint:
+- `POST /api/analyze-face` - Face analysis endpoint
+
+## Emotion Icons
+
+The app displays appropriate emojis for each detected emotion:
+- ?? Happy
+- ?? Sad  
+- ?? Angry
+- ?? Surprised
+- ?? Neutral
+- ?? Fear
+- ?? Disgust
+- ?? Excited
+- ?? Confused
+- and more...
 
 ## Deployment
 
@@ -29,14 +42,10 @@ This frontend integrates with the backend at: `https://emote-vn4b7.vercel.app`
 2. Connect repository to Vercel
 3. Deploy automatically
 
-### Environment Variables
-- `VITE_API_BASE_URL`: Backend API base URL
-- `VITE_APP_NAME`: Application name
-
 ## Technology Stack
 
 - **Frontend**: Pure HTML5, CSS3, JavaScript
-- **Styling**: Custom CSS with luxury design system
+- **Styling**: Custom CSS with tech theme
 - **Icons**: Font Awesome 6.4.0
 - **Fonts**: Google Fonts (Inter)
 - **Backend**: Integrated with Emotion Detection API
@@ -44,10 +53,10 @@ This frontend integrates with the backend at: `https://emote-vn4b7.vercel.app`
 ## Developer
 
 **Kumar Harsh**
-- Senior AI Engineer & Full Stack Developer
+- AI Engineer & Full Stack Developer
 - Email: kh949118@gmail.com
 - Phone: +91 9279157296
 
 ## License
 
-Premium EmotiSense AI - All rights reserved.
+EmotiSense AI - All rights reserved.
