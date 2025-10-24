@@ -4,12 +4,19 @@ import { resolve } from "path"
 
 export default defineConfig({
   plugins: [react()],
+  base: "./",
   resolve: {
     alias: {
       "@": resolve(__dirname, "src")
     }
   },
   build: {
-    outDir: "dist"
+    outDir: "dist",
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html")
+      },
+      external: []
+    }
   }
 })

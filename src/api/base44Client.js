@@ -1,4 +1,4 @@
-﻿// Base44 API Client with environment variables
+// Base44 API Client with environment variables
 const BASE_URL = process.env.BASE44_API_URL || "https://app.base44.com/api/apps/YOUR_APP_ID_HERE";
 const API_KEY = process.env.BASE44_API_KEY || "your_api_key_here";
 
