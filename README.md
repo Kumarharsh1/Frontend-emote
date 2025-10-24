@@ -4,7 +4,7 @@
 
 ## Features
 
-- ?? **Real-time Emotion Detection** (Happy, Sad, Angry, Surprised, Neutral, Fear, Disgust, and more)
+- ?? **Real-time Emotion Detection** with PROPER EMOJIS (Happy, Sad, Angry, Surprised, Neutral, Fear, Disgust, and more)
 - ?? **Accurate Gender Recognition** with confidence scores
 - ?? **Multiple Input Methods**:
   - Live camera analysis
@@ -14,16 +14,9 @@
 - ?? **Tight & Responsive** design
 - ? **Fast Analysis** with proper backend integration
 
-## Backend Integration
+## Fixed Emoji Display
 
-Integrated with backend API: `https://emote-vn4b7.vercel.app`
-
-### API Endpoint:
-- `POST /api/analyze-face` - Face analysis endpoint
-
-## Emotion Icons
-
-The app displays appropriate emojis for each detected emotion:
+The app now properly displays emojis for each detected emotion:
 - ?? Happy
 - ?? Sad  
 - ?? Angry
@@ -33,7 +26,17 @@ The app displays appropriate emojis for each detected emotion:
 - ?? Disgust
 - ?? Excited
 - ?? Confused
-- and more...
+- ?? Laughing
+- ?? Crying
+- ?? Love
+- and many more...
+
+## Backend Integration
+
+Integrated with backend API: `https://emote-vn4b7.vercel.app`
+
+### API Endpoint:
+- `POST /api/analyze-face` - Face analysis endpoint
 
 ## Deployment
 

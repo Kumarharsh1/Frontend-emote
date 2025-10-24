@@ -475,6 +475,10 @@
         .emotion-icon {
             font-size: 3rem;
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .emotion-text {
@@ -770,7 +774,7 @@
                     <div class="metric-label">Detected Emotion</div>
                     <div class="emotion-display">
                         <div class="emotion-icon" id="emotionIcon">??</div>
-                        <div class="emotion-text" id="emotionText">Neutral</div>
+                        <div class="emotion-text" id="emotionText">Ready</div>
                     </div>
                     <div class="metric-value" id="emotionConfidence">0%</div>
                     <div class="confidence-bar">
@@ -838,29 +842,66 @@
         let currentTab = 'live';
         let isAnalyzing = false;
 
-        // Enhanced Emotion Icons with more expressions
+        // Comprehensive Emotion Icons Mapping
         const emotionIcons = {
-            happy: '??',
-            sad: '??', 
-            angry: '??',
-            surprised: '??',
-            neutral: '??',
-            fear: '??',
-            fearful: '??',
-            disgust: '??',
-            disgusted: '??',
-            excited: '??',
-            confused: '??',
-            calm: '??',
-            tired: '??',
-            laughing: '??',
-            crying: '??',
-            worried: '??',
-            love: '??',
-            sleepy: '??',
-            sick: '??',
-            cool: '??'
+            // Primary emotions
+            'happy': '??',
+            'sad': '??', 
+            'angry': '??',
+            'surprised': '??',
+            'neutral': '??',
+            'fear': '??',
+            'fearful': '??',
+            'disgust': '??',
+            'disgusted': '??',
+            
+            // Extended emotions
+            'excited': '??',
+            'confused': '??',
+            'calm': '??',
+            'tired': '??',
+            'laughing': '??',
+            'crying': '??',
+            'worried': '??',
+            'love': '??',
+            'sleepy': '??',
+            'sick': '??',
+            'cool': '??',
+            'wink': '??',
+            'kiss': '??',
+            'rage': '??',
+            'triumph': '??',
+            'relieved': '??',
+            'pensive': '??',
+            
+            // Fallback for any unknown emotion
+            'default': '??'
         };
+
+        // Function to get emoji for emotion
+        function getEmojiForEmotion(emotion) {
+            if (!emotion) return emotionIcons.default;
+            
+            const lowerEmotion = emotion.toLowerCase().trim();
+            
+            // Direct match
+            if (emotionIcons[lowerEmotion]) {
+                return emotionIcons[lowerEmotion];
+            }
+            
+            // Partial matches
+            if (lowerEmotion.includes('happy') || lowerEmotion.includes('joy')) return emotionIcons.happy;
+            if (lowerEmotion.includes('sad') || lowerEmotion.includes('sorrow')) return emotionIcons.sad;
+            if (lowerEmotion.includes('angry') || lowerEmotion.includes('mad')) return emotionIcons.angry;
+            if (lowerEmotion.includes('surprise')) return emotionIcons.surprised;
+            if (lowerEmotion.includes('fear')) return emotionIcons.fear;
+            if (lowerEmotion.includes('disgust')) return emotionIcons.disgust;
+            if (lowerEmotion.includes('neutral')) return emotionIcons.neutral;
+            if (lowerEmotion.includes('excite')) return emotionIcons.excited;
+            if (lowerEmotion.includes('confus')) return emotionIcons.confused;
+            
+            return emotionIcons.default;
+        }
 
         // Function to switch tabs
         function switchTab(tabName) {
@@ -1085,15 +1126,19 @@
         function displayResults(data) {
             const result = document.getElementById('result');
             
-            // Default values if data is missing
-            const emotion = (data.emotion || data.dominant_emotion || 'neutral').toLowerCase();
-            const emotionConfidence = data.emotion_confidence || data.confidence || 50;
-            const gender = (data.gender || 'unknown').toLowerCase();
-            const genderConfidence = data.gender_confidence || 60;
+            // Extract data from backend response
+            const emotion = data.emotion || data.dominant_emotion || data.predicted_emotion || 'neutral';
+            const emotionConfidence = data.emotion_confidence || data.confidence || data.accuracy || 50;
+            const gender = data.gender || data.predicted_gender || 'unknown';
+            const genderConfidence = data.gender_confidence || data.gender_accuracy || 60;
 
-            // Update emotion display
-            const emotionIcon = emotionIcons[emotion] || '??';
-            document.getElementById('emotionIcon').textContent = emotionIcon;
+            // Get the correct emoji for the detected emotion
+            const emotionEmoji = getEmojiForEmotion(emotion);
+            
+            console.log('Detected emotion:', emotion, 'Emoji:', emotionEmoji);
+
+            // Update emotion display with proper emoji
+            document.getElementById('emotionIcon').textContent = emotionEmoji;
             document.getElementById('emotionText').textContent = emotion.charAt(0).toUpperCase() + emotion.slice(1);
             document.getElementById('emotionConfidence').textContent = Math.round(emotionConfidence) + '%';
             document.getElementById('emotionBar').style.width = emotionConfidence + '%';
@@ -1105,7 +1150,7 @@
 
             // Update analysis notes
             const notes = data.analysis_notes || 
-                `Detected ${emotion} expression with ${Math.round(emotionConfidence)}% confidence. ` +
+                `Detected ${emotion} expression ${emotionEmoji} with ${Math.round(emotionConfidence)}% confidence. ` +
                 `Gender identified as ${gender} with ${Math.round(genderConfidence)}% accuracy.`;
             
             document.getElementById('notesText').textContent = notes;
@@ -1144,6 +1189,11 @@
             console.log('EmotiSense AI initialized');
             console.log('Backend URL:', API_BASE_URL);
             console.log('App Name:', APP_NAME);
+            
+            // Test emoji display
+            console.log('Emoji test - Happy:', getEmojiForEmotion('happy'));
+            console.log('Emoji test - Sad:', getEmojiForEmotion('sad'));
+            console.log('Emoji test - Angry:', getEmojiForEmotion('angry'));
         });
     </script>
 </body>
