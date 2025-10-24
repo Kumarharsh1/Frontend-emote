@@ -1,13 +1,17 @@
 import React from "react"
+import { Routes, Route } from "react-router-dom"
+import Layout from "./components/Layout"
+import Scanner from "./pages/Scanner"
+import History from "./pages/History"
 
-function App() {
+export default function App() {
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Emotion Detector Frontend</h1>
-      <p>Backend API: https://emote-vn4b7.vercel.app</p>
-      <p>Frontend is working! ??</p>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Scanner />} />
+        <Route path="/scanner" element={<Scanner />} />
+        <Route path="/history" element={<History />} />
+      </Routes>
+    </Layout>
   )
 }
-
-export default App

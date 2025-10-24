@@ -1,4 +1,4 @@
-﻿# Environment variables
+# Environment variables
 .env
 .env.local
 .env.development.local
@@ -40,10 +40,6 @@ build/
 
 # Frontend source files (exclude if backend only)
 public/
-src/components/
-src/pages/
-src/hooks/
-src/styles/
 *.jsx
 *.css
 
