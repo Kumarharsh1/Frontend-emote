@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/Card";
+import { Button } from "./components/ui/button";
+import { Card } from "./components/ui/Card";
 import { Camera, X, Circle, RotateCw } from "lucide-react";
 import { motion } from "framer-motion";
 

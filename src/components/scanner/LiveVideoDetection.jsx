@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "./components/ui/button";
+import { Card } from "./components/ui/Card";
+import { Badge } from "./components/ui/badge";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Square, RotateCw, X, Brain } from "lucide-react";
 

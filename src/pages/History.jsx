@@ -1,12 +1,12 @@
 import React from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card } from "./components/ui/Card";
+import { Badge } from "./components/ui/badge";
+import { Button } from "./components/ui/button";
 import { motion } from "framer-motion";
 import { User, Trash2, Calendar, Brain } from "lucide-react";
 import { format } from "date-fns";
-import base44 from "@/api/base44Client";
+import base44 from "./api/base44Client";
 
 const emotionColors = {
   happy: { bg: "from-green-500 to-emerald-500", text: "text-green-400" },

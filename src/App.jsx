@@ -1,8 +1,8 @@
 import React from "react"
 import { Routes, Route } from "react-router-dom"
-import Layout from "./components/Layout"
-import Scanner from "./pages/Scanner"
-import History from "./pages/History"
+import Layout from "./components/Layout.jsx"
+import Scanner from "./pages/Scanner.jsx"
+import History from "./pages/History.jsx"
 
 export default function App() {
   return (

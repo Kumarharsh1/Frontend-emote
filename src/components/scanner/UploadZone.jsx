@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/Card";
+import { Button } from "./components/ui/button";
+import { Card } from "./components/ui/Card";
 import { Upload, X, Image } from "lucide-react";
 import { motion } from "framer-motion";
 

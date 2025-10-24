@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/Card";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "./components/ui/button";
+import { Card } from "./components/ui/Card";
+import { Progress } from "./components/ui/progress";
+import { Badge } from "./components/ui/badge";
 import { motion } from "framer-motion";
 import { Sparkles, RotateCcw, ArrowLeft, Brain } from "lucide-react";
 
