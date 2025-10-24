@@ -4,6 +4,8 @@ import { resolve } from "path"
 
 export default defineConfig({
   plugins: [react()],
+  root: ".",
+  publicDir: "public",
   resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
@@ -16,11 +18,9 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, "index.html")
-      }
+      input: resolve(__dirname, "index.html")
     }
   }
 })
